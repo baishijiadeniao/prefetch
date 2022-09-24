@@ -84,14 +84,14 @@ int main(){
     block* c=(block*)malloc(sizeof(block)*NUM);
     block* d=(block*)malloc(sizeof(block)*NUM);
     for (int i = 0; i < 10000; i++){
-        __builtin_prefetch(&c[i+4].val,0);
-        __builtin_prefetch(&c[i+5].val,0);
-        __builtin_prefetch(&c[i+6].val,0);
-        __builtin_prefetch(&c[i+7].val,0);
-        __builtin_prefetch(&c[i+4].val,0);
-        __builtin_prefetch(&d[i+5].val,0);
-        __builtin_prefetch(&d[i+6].val,0);
-        __builtin_prefetch(&d[i+7].val,0);
+        __builtin_prefetch(&c[i+4].val,0,0);
+        __builtin_prefetch(&c[i+5].val,0,0);
+        __builtin_prefetch(&c[i+6].val,0,0);
+        __builtin_prefetch(&c[i+7].val,0,0);
+        __builtin_prefetch(&c[i+4].val,0,0);
+        __builtin_prefetch(&d[i+5].val,0,0);
+        __builtin_prefetch(&d[i+6].val,0,0);
+        __builtin_prefetch(&d[i+7].val,0,0);
         sum+=c[i].val+d[i].val;
         sum+=c[i+1].val+d[i+1].val;
         sum+=c[i+2].val+d[i+2].val;
